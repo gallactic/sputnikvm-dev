@@ -10,8 +10,8 @@ repository = "https://github.com/ethereumproject/etestrpc"
 name = "svmdev"
 
 [dependencies]
-sputnikvm = "0.10"
-sputnikvm-stateful = "0.10"
+sputnikvm =  { path = "../sputnikvm"}
+sputnikvm-stateful =  { path = "../sputnikvm/stateful" }
 clap = "2.26"
 secp256k1-plus = "0.5"
 rand = "0.3.1"
@@ -34,12 +34,14 @@ log = "0.3"
 env_logger = "0.4"
 hyper = { version = "0.6.16", optional = true }
 
-sputnikvm-network-classic = "0.10"
-sputnikvm-network-foundation = "0.10"
-sputnikvm-network-ubiq = "0.10"
-sputnikvm-network-ellaism = "0.10"
-sputnikvm-network-expanse = "0.10"
-sputnikvm-network-musicoin = "0.10"
+sputnikvm-network-classic = { path = "../sputnikvm/network/classic"}
+sputnikvm-network-foundation = { path = "../sputnikvm/network/foundation" }
+sputnikvm-network-ubiq = { path = "../sputnikvm/network/ubiq" }
+sputnikvm-network-ellaism = { path = "../sputnikvm/network/ellaism" }
+sputnikvm-network-expanse = { path = "../sputnikvm/network/expanse" }
+sputnikvm-network-musicoin = { path = "../sputnikvm/network/musicoin" }
+sputnikvm-network-gallactic = { path = "../sputnikvm/network/gallactic" }
+
 
 [features]
 frontend = ["hyper"]

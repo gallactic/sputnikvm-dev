@@ -32,6 +32,7 @@ extern crate sputnikvm_network_ubiq;
 extern crate sputnikvm_network_ellaism;
 extern crate sputnikvm_network_expanse;
 extern crate sputnikvm_network_musicoin;
+extern crate sputnikvm_network_gallactic;
 
 #[cfg(feature = "frontend")]
 extern crate hyper;
@@ -89,6 +90,10 @@ use sputnikvm_network_ubiq::{
     SpuriousDragonPatch as PUbiqSpuriousDragon,
 };
 
+use sputnikvm_network_gallactic::{
+    GallacticFrontierPatch as PGallactic,
+};
+
 fn main() {
     env_logger::init();
 
@@ -106,6 +111,8 @@ fn main() {
 
     match matches.value_of("CHAIN") {
         None => with_patch::<PClassicEIP160>(matches),
+
+        Some("gallactic") => with_patch::<PGallactic>(matches),
 
         Some("classic") => with_patch::<PClassicEIP160>(matches),
         Some("classic-eip160") => with_patch::<PClassicEIP160>(matches),

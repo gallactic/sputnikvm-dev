@@ -136,6 +136,11 @@ version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
+name = "ed25519"
+version = "0.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
 name = "elastic-array-plus"
 version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -285,6 +290,11 @@ dependencies = [
  "memchr 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "regex 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
+
+[[package]]
+name = "hex"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "hpack"
@@ -578,9 +588,9 @@ name = "num"
 version = "0.1.42"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "num-integer 0.1.36 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-integer 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "num-iter 0.1.35 (registry+https://github.com/rust-lang/crates.io-index)",
- "num-traits 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -588,18 +598,27 @@ name = "num-bigint"
 version = "0.1.43"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "num-integer 0.1.36 (registry+https://github.com/rust-lang/crates.io-index)",
- "num-traits 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-integer 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "rand 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "rustc-serialize 0.3.24 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
-name = "num-integer"
-version = "0.1.36"
+name = "num-bigint"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "num-traits 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-integer 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "num-integer"
+version = "0.1.39"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "num-traits 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -607,8 +626,8 @@ name = "num-iter"
 version = "0.1.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "num-integer 0.1.36 (registry+https://github.com/rust-lang/crates.io-index)",
- "num-traits 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-integer 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -616,12 +635,12 @@ name = "num-traits"
 version = "0.1.43"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "num-traits 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "num-traits"
-version = "0.2.0"
+version = "0.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -691,7 +710,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
  "rand 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "smallvec 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "smallvec 0.6.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "winapi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -795,6 +814,18 @@ dependencies = [
  "byte-tools 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "digest 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "generic-array 0.8.3 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "rust-crypto"
+version = "0.2.36"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "gcc 0.3.54 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rand 0.3.22 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rustc-serialize 0.3.24 (registry+https://github.com/rust-lang/crates.io-index)",
+ "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -917,8 +948,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "smallvec"
-version = "0.6.0"
+version = "0.6.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "unreachable 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
 
 [[package]]
 name = "solicit"
@@ -932,14 +966,19 @@ dependencies = [
 [[package]]
 name = "sputnikvm"
 version = "0.10.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
+ "bn-plus 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "digest 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ed25519 0.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "etcommon-bigint 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "etcommon-block 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "etcommon-block-core 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "etcommon-rlp 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hex 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "log 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-bigint 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "ripemd160 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rust-crypto 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
  "secp256k1-plus 0.5.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "sha2 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "sha3 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -970,98 +1009,110 @@ dependencies = [
  "serde_derive 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_json 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "sha3 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm-network-classic 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm-network-ellaism 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm-network-expanse 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm-network-foundation 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm-network-musicoin 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm-network-ubiq 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm-stateful 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sputnikvm 0.10.1",
+ "sputnikvm-network-classic 0.10.1",
+ "sputnikvm-network-ellaism 0.10.1",
+ "sputnikvm-network-expanse 0.10.1",
+ "sputnikvm-network-foundation 0.10.1",
+ "sputnikvm-network-gallactic 0.1.0",
+ "sputnikvm-network-musicoin 0.10.1",
+ "sputnikvm-network-ubiq 0.10.1",
+ "sputnikvm-stateful 0.10.0",
 ]
 
 [[package]]
 name = "sputnikvm-network-classic"
-version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.10.1"
 dependencies = [
  "etcommon-bigint 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sputnikvm 0.10.1",
+ "sputnikvm-precompiled-bn128 0.10.1",
+ "sputnikvm-precompiled-modexp 0.10.1",
 ]
 
 [[package]]
 name = "sputnikvm-network-ellaism"
-version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.10.1"
 dependencies = [
  "etcommon-bigint 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sputnikvm 0.10.1",
 ]
 
 [[package]]
 name = "sputnikvm-network-expanse"
-version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.10.1"
 dependencies = [
  "etcommon-bigint 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm-precompiled-bn128 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm-precompiled-modexp 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sputnikvm 0.10.1",
+ "sputnikvm-precompiled-bn128 0.10.1",
+ "sputnikvm-precompiled-modexp 0.10.1",
 ]
 
 [[package]]
 name = "sputnikvm-network-foundation"
-version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.10.1"
 dependencies = [
  "etcommon-bigint 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm-precompiled-bn128 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm-precompiled-modexp 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sputnikvm 0.10.1",
+ "sputnikvm-precompiled-bn128 0.10.1",
+ "sputnikvm-precompiled-modexp 0.10.1",
+]
+
+[[package]]
+name = "sputnikvm-network-gallactic"
+version = "0.1.0"
+dependencies = [
+ "bn-plus 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ed25519 0.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "etcommon-bigint 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-bigint 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rust-crypto 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sputnikvm 0.10.1",
+ "sputnikvm-precompiled-bn128 0.10.1",
+ "sputnikvm-precompiled-modexp 0.10.1",
 ]
 
 [[package]]
 name = "sputnikvm-network-musicoin"
-version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.10.1"
 dependencies = [
  "etcommon-bigint 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sputnikvm 0.10.1",
+ "sputnikvm-precompiled-bn128 0.10.1",
+ "sputnikvm-precompiled-modexp 0.10.1",
 ]
 
 [[package]]
 name = "sputnikvm-network-ubiq"
-version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.10.1"
 dependencies = [
  "etcommon-bigint 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sputnikvm 0.10.1",
+ "sputnikvm-precompiled-bn128 0.10.1",
+ "sputnikvm-precompiled-modexp 0.10.1",
 ]
 
 [[package]]
 name = "sputnikvm-precompiled-bn128"
-version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.10.1"
 dependencies = [
  "bn-plus 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "etcommon-bigint 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sputnikvm 0.10.1",
 ]
 
 [[package]]
 name = "sputnikvm-precompiled-modexp"
-version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.10.1"
 dependencies = [
  "etcommon-bigint 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "num-bigint 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sputnikvm 0.10.1",
 ]
 
 [[package]]
 name = "sputnikvm-stateful"
 version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "etcommon-bigint 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "etcommon-block 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1069,7 +1120,7 @@ dependencies = [
  "etcommon-trie 0.3.11 (registry+https://github.com/rust-lang/crates.io-index)",
  "rand 0.3.22 (registry+https://github.com/rust-lang/crates.io-index)",
  "sha3 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "sputnikvm 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sputnikvm 0.10.1",
 ]
 
 [[package]]
@@ -1356,6 +1407,7 @@ dependencies = [
 "checksum cookie 0.1.21 (registry+https://github.com/rust-lang/crates.io-index)" = "02443c47d5c80f9b4be9b8f51c0bf307d663fe28b18ccabef44d8b0a4b2a967b"
 "checksum digest 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)" = "e5b29bf156f3f4b3c4f610a25ff69370616ae6e0657d416de22645483e72af0a"
 "checksum dtoa 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "09c3753c3db574d215cba4ea76018483895d7bff25a31b49ba45db21c48e50ab"
+"checksum ed25519 0.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "3744657665bb03e6b3c306f0a91ee8861ea87a30debc307343acd5e6d6de869d"
 "checksum elastic-array-plus 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)" = "6432870c5bd8b1b788e12e1095c337afab982a56aad4f48fda45471ff0abcc24"
 "checksum env_logger 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)" = "3ddf21e73e016298f5cb37d6ef8e8da8e39f91f9ec8b0df44b7deb16a9f8cd5b"
 "checksum etcommon-bigint 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)" = "ac98c3d82d8998ae6120c345c59aeadb92cdb513e2f9820321efa91ac6636633"
@@ -1374,6 +1426,7 @@ dependencies = [
 "checksum gcc 0.3.54 (registry+https://github.com/rust-lang/crates.io-index)" = "5e33ec290da0d127825013597dbdfc28bee4964690c7ce1166cbc2a7bd08b1bb"
 "checksum generic-array 0.8.3 (registry+https://github.com/rust-lang/crates.io-index)" = "fceb69994e330afed50c93524be68c42fa898c2d9fd4ee8da03bd7363acd26f2"
 "checksum globset 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)" = "90d069fe6beb9be359ef505650b3f73228c5591a3c4b1f32be2f4f44459ffa3a"
+"checksum hex 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "805026a5d0141ffc30abb3be3173848ad46a1b1664fe632428479619a3644d77"
 "checksum hpack 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "3d2da7d3a34cf6406d9d700111b8eafafe9a251de41ae71d8052748259343b58"
 "checksum httparse 1.2.4 (registry+https://github.com/rust-lang/crates.io-index)" = "c2f407128745b78abc95c0ffbe4e5d37427fdc0d45470710cfef8c44522a2e37"
 "checksum hyper 0.11.19 (registry+https://github.com/rust-lang/crates.io-index)" = "47659bb1cb7ef3cd7b4f9bd2a11349b8d92097d34f9597a3c09e9bcefaf92b61"
@@ -1408,10 +1461,11 @@ dependencies = [
 "checksum nodrop 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)" = "9a2228dca57108069a5262f2ed8bd2e82496d2e074a06d1ccc7ce1687b6ae0a2"
 "checksum num 0.1.42 (registry+https://github.com/rust-lang/crates.io-index)" = "4703ad64153382334aa8db57c637364c322d3372e097840c72000dabdcf6156e"
 "checksum num-bigint 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)" = "81b483ea42927c463e191802e7334556b48e7875297564c0e9951bd3a0ae53e3"
-"checksum num-integer 0.1.36 (registry+https://github.com/rust-lang/crates.io-index)" = "f8d26da319fb45674985c78f1d1caf99aa4941f785d384a2ae36d0740bc3e2fe"
+"checksum num-bigint 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "3eceac7784c5dc97c2d6edf30259b4e153e6e2b42b3c85e9a6e9f45d06caef6e"
+"checksum num-integer 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)" = "e83d528d2677f0518c570baf2b7abdcf0cd2d248860b68507bdcb3e91d4c0cea"
 "checksum num-iter 0.1.35 (registry+https://github.com/rust-lang/crates.io-index)" = "4b226df12c5a59b63569dd57fafb926d91b385dfce33d8074a412411b689d593"
 "checksum num-traits 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)" = "92e5113e9fd4cc14ded8e499429f396a20f98c772a47cc8622a736e1ec843c31"
-"checksum num-traits 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e7de20f146db9d920c45ee8ed8f71681fd9ade71909b48c3acbd766aa504cf10"
+"checksum num-traits 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)" = "0b3a5d7cc97d6d30d8b9bc8fa19bf45349ffe46241e8816f50f62f6d6aaabee1"
 "checksum num_cpus 0.2.13 (registry+https://github.com/rust-lang/crates.io-index)" = "cee7e88156f3f9e19bdd598f8d6c9db7bf4078f99f8381f43a55b09648d1a6e3"
 "checksum num_cpus 1.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "c51a3322e4bca9d212ad9a158a02abc6934d005490c054a2778df73a70aa0a30"
 "checksum odds 0.2.26 (registry+https://github.com/rust-lang/crates.io-index)" = "4eae0151b9dacf24fcc170d9995e511669a082856a91f958a2fe380bfab3fb22"
@@ -1433,6 +1487,7 @@ dependencies = [
 "checksum relay 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "1576e382688d7e9deecea24417e350d3062d97e32e45d70b1cde65994ff1489a"
 "checksum remove_dir_all 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "b5d2f806b0fcdabd98acd380dc8daef485e22bcb7cddc811d1337967f2528cf5"
 "checksum ripemd160 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)" = "a347777d54218aec5d50f31ea04e8c0bceb1dea0282323f0cac42853178f07e9"
+"checksum rust-crypto 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)" = "f76d05d3993fd5f4af9434e8e436db163a12a9d40e1a58a726f27a01dfd12a2a"
 "checksum rustc-serialize 0.3.24 (registry+https://github.com/rust-lang/crates.io-index)" = "dcf128d1287d2ea9d80910b5f1120d0b8eede3fbf1abe91c40d39ea7d51e6fda"
 "checksum safemem 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e27a8b19b835f7aea908818e871f5cc3a5a186550c30773be987e155e8163d8f"
 "checksum same-file 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "d931a44fdaa43b8637009e7632a02adc4f2b2e0733c08caa4cf00e8da4a117a7"
@@ -1448,18 +1503,8 @@ dependencies = [
 "checksum slab 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "17b4fcaed89ab08ef143da37bc52adbcc04d4a69014f4c1208d6b51f0c47bc23"
 "checksum slab 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "fdeff4cd9ecff59ec7e3744cbca73dfe5ac35c2aedb2cfba8a1c715a18912e9d"
 "checksum smallvec 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "4c8cbcd6df1e117c2210e13ab5109635ad68a929fcbb8964dc965b76cb5ee013"
-"checksum smallvec 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)" = "44db0ecb22921ef790d17ae13a3f6d15784183ff5f2a01aa32098c7498d2b4b9"
+"checksum smallvec 0.6.5 (registry+https://github.com/rust-lang/crates.io-index)" = "153ffa32fd170e9944f7e0838edf824a754ec4c1fc64746fcc9fe1f8fa602e5d"
 "checksum solicit 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)" = "172382bac9424588d7840732b250faeeef88942e37b6e35317dce98cafdd75b2"
-"checksum sputnikvm 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)" = "af9d5149471092a4cc34f06a0a8e0fb6c237198a5307a31a548345a71319c5f9"
-"checksum sputnikvm-network-classic 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "f5ce425c90cf6145059f827b0011bffd13e03ae4ce99cd5338be23643908c85f"
-"checksum sputnikvm-network-ellaism 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "c8472bf92e8723db48ff1401d6e97313985b3b960740a021237b50f06f92586a"
-"checksum sputnikvm-network-expanse 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "3fc7e85bab624390f17e35b7c70b6af48a586bd0b79a82c3d2b67a6550873e3d"
-"checksum sputnikvm-network-foundation 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "1cbac453bd57b31f2465e48eded84f14b963177a60ac3036d7038c66416478ce"
-"checksum sputnikvm-network-musicoin 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "9ee4c6975575b715745cda0ac1b95f6279bfed5abe8118b89b3c8ac1104b9e7d"
-"checksum sputnikvm-network-ubiq 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "f93e3f98b192c20084208c027a9219a02805a42406313da9192dda03d0358ea1"
-"checksum sputnikvm-precompiled-bn128 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "cbe5788e2e983c25977669361a5bfede4cdbeab4dc8798e13960054bdf605a6f"
-"checksum sputnikvm-precompiled-modexp 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ffb8536abdfe79e984838dec131927f6d5844ff95eac548410251574e073eb9e"
-"checksum sputnikvm-stateful 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "9f2a73199b5b7f32bcfe85077da9937d1077659a9e938f92a76bf14b1f65d05b"
 "checksum stable_deref_trait 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "15132e0e364248108c5e2c02e3ab539be8d6f5d52a01ca9bbf27ed657316f02b"
 "checksum strsim 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "bb4f380125926a99e52bc279241539c018323fab05ad6368b56f93d9369ff550"
 "checksum syn 0.11.11 (registry+https://github.com/rust-lang/crates.io-index)" = "d3b891b9015c88c576343b9b3e41c2c11a51c219ef067b264bd9c8aa9b441dad"

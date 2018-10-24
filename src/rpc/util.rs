@@ -138,7 +138,8 @@ pub fn to_rpc_transaction(transaction: Transaction, block: Option<&Block>) -> RP
         gas: Some(Hex(transaction.gas_limit)),
         gas_price: Some(Hex(transaction.gas_price)),
         value: Some(Hex(transaction.value)),
-        data: Some(Bytes(transaction.input)),
+        data: None,
+        input: Some(Bytes(transaction.input)), // Look at: https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_gettransactionbyhash
         nonce: Some(Hex(transaction.nonce)),
 
         hash: Some(Hex(hash)),

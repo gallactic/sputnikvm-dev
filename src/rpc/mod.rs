@@ -106,6 +106,7 @@ pub struct RPCTransaction {
     pub gas_price: Option<Hex<Gas>>,
     pub value: Option<Hex<U256>>,
     pub data: Option<Bytes>,
+    pub input: Option<Bytes>,
     pub nonce: Option<Hex<U256>>,
 
     pub hash: Option<Hex<H256>>,
