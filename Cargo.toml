@@ -1,23 +1,17 @@
 [package]
 name = "sputnikvm-dev"
-version = "0.2.0"
+version = "0.2.1"
 license = "Apache-2.0"
 authors = ["Wei Tang <hi@that.world>"]
 description = "Test RPC tool for Ethereum written in Rust"
-repository = "https://github.com/ethereumproject/etestrpc"
-
-[[bin]]
-name = "svmdev"
 
 [dependencies]
-sputnikvm =  { path = "../sputnikvm"}
-sputnikvm-stateful =  { path = "../sputnikvm/stateful" }
 clap = "2.26"
 secp256k1-plus = "0.5"
 rand = "0.3.1"
 sha3 = "0.6"
 blockchain = "0.2"
-etcommon-block = "0.3"
+etcommon-block = "0.5.1"
 etcommon-trie = "0.3"
 etcommon-bigint = "0.2"
 etcommon-bloom = "0.2"
@@ -34,13 +28,15 @@ log = "0.3"
 env_logger = "0.4"
 hyper = { version = "0.6.16", optional = true }
 
-sputnikvm-network-classic = { path = "../sputnikvm/network/classic"}
-sputnikvm-network-foundation = { path = "../sputnikvm/network/foundation" }
-sputnikvm-network-ubiq = { path = "../sputnikvm/network/ubiq" }
-sputnikvm-network-ellaism = { path = "../sputnikvm/network/ellaism" }
-sputnikvm-network-expanse = { path = "../sputnikvm/network/expanse" }
-sputnikvm-network-musicoin = { path = "../sputnikvm/network/musicoin" }
-sputnikvm-network-gallactic = { path = "../sputnikvm/network/gallactic" }
+sputnikvm = { git = "https://github.com/gallactic/sputnikvm"}
+sputnikvm-stateful = { git = "https://github.com/gallactic/sputnikvm"}
+sputnikvm-network-classic = { git = "https://github.com/gallactic/sputnikvm"}
+sputnikvm-network-foundation = { git = "https://github.com/gallactic/sputnikvm"}
+sputnikvm-network-ubiq = { git = "https://github.com/gallactic/sputnikvm"}
+sputnikvm-network-ellaism = { git = "https://github.com/gallactic/sputnikvm"}
+sputnikvm-network-expanse = { git = "https://github.com/gallactic/sputnikvm"}
+sputnikvm-network-musicoin = { git = "https://github.com/gallactic/sputnikvm"}
+sputnikvm-network-gallactic = { git = "https://github.com/gallactic/sputnikvm"}
 
 
 [features]

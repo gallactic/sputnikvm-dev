@@ -44,16 +44,15 @@ mod rpc;
 #[cfg(feature = "frontend")]
 mod assets;
 
-use miner::MinerState;
 use rand::os::OsRng;
-use secp256k1::key::{PublicKey, SecretKey};
+use secp256k1::key::{SecretKey};
 use secp256k1::SECP256K1;
 use bigint::U256;
 use hexutil::*;
 use std::thread;
 use std::str::FromStr;
 use std::sync::{Arc, Mutex};
-use std::sync::mpsc::{channel, Sender, Receiver};
+use std::sync::mpsc::{channel};
 use sputnikvm::Patch;
 
 use sputnikvm_network_classic::{

@@ -19,31 +19,31 @@ pub enum Error {
 }
 
 impl From<PreExecutionError> for Error {
-    fn from(val: PreExecutionError) -> Error {
+    fn from(_val: PreExecutionError) -> Error {
         Error::CallError
     }
 }
 
 impl From<DecoderError> for Error {
-    fn from(val: DecoderError) -> Error {
+    fn from(_val: DecoderError) -> Error {
         Error::RlpError
     }
 }
 
 impl From<ParseHexError> for Error {
-    fn from(val: ParseHexError) -> Error {
+    fn from(_val: ParseHexError) -> Error {
         Error::HexError
     }
 }
 
 impl From<ParseIntError> for Error {
-    fn from(val: ParseIntError) -> Error {
+    fn from(_val: ParseIntError) -> Error {
         Error::IntError
     }
 }
 
 impl From<secp256k1::Error> for Error {
-    fn from(val: secp256k1::Error) -> Error {
+    fn from(_val: secp256k1::Error) -> Error {
         Error::ECDSAError
     }
 }

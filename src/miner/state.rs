@@ -1,17 +1,14 @@
 use rlp;
 
 use error::Error;
-use block::{Receipt, Block, TotalHeader, UnsignedTransaction, Transaction, TransactionAction, Log, FromKey, Header, Account};
-use trie::{MemoryDatabase, MemoryDatabaseGuard, Trie};
-use bigint::{H256, M256, U256, H64, B256, Gas, Address};
+use block::{Receipt, Block, TotalHeader, HeaderHash, Transaction};
+use trie::{MemoryDatabase};
+use bigint::{H256, M256, U256, Address};
 use sha3::{Digest, Keccak256};
-use blockchain::chain::HeaderHash;
 use secp256k1::key::SecretKey;
 use sputnikvm::AccountChange;
 use sputnikvm_stateful::{MemoryStateful};
-
-use std::sync::{Mutex, MutexGuard};
-use std::collections::{HashMap, HashSet};
+use std::collections::{HashMap};
 
 pub struct MinerState {
     all_pending_transaction_hashes: Vec<H256>,
@@ -39,7 +36,6 @@ impl MinerState {
         let mut total_header_database = HashMap::new();
         let mut block_hashes = Vec::new();
 
-        let value = rlp::encode(&genesis).to_vec();
         let hash = genesis.header.header_hash();
         block_database.insert(hash, genesis.clone());
 
@@ -97,7 +93,6 @@ impl MinerState {
     }
 
     pub fn append_block(&mut self, block: Block) -> H256 {
-        let value = rlp::encode(&block).to_vec();
         let hash = block.header.header_hash();
         self.block_database.insert(hash, block.clone());
 

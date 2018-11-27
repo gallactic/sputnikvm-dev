@@ -1,23 +1,19 @@
-use super::{EthereumRPC, Either, RPCStep, RPCTransaction, RPCBlock, RPCLog, RPCReceipt, RPCTopicFilter, RPCLogFilter, RPCTraceConfig, RPCBreakpointConfig, RPCSourceMapConfig};
+use super::{Either, RPCStep, RPCTransaction, RPCBlock, RPCLog, RPCReceipt, RPCTopicFilter, RPCLogFilter, RPCTraceConfig, RPCBreakpointConfig, RPCSourceMapConfig};
 use super::filter::*;
 use super::serialize::*;
 use super::solidity::*;
 use error::Error;
 use miner::MinerState;
 
-use rlp::{self, UntrustedRlp};
+use rlp::{self};
 use bigint::{M256, U256, H256, H2048, Address, Gas};
-use hexutil::{read_hex, to_hex};
-use block::{Block, TotalHeader, Account, Log, Receipt, FromKey, Transaction, UnsignedTransaction, TransactionAction, GlobalSignaturePatch, RlpHash};
-use blockchain::chain::HeaderHash;
+use hexutil::{read_hex};
+use block::{Block, TotalHeader, HeaderHash, Account, Receipt, FromKey, Transaction, UnsignedTransaction, TransactionAction, GlobalSignaturePatch, RlpHash};
 use sputnikvm::{ValidTransaction, UntrustedTransaction, VM, VMStatus, MachineStatus, HeaderParams, SeqTransactionVM, Patch, Memory, AccountChange, AccountCommitment};
 use sputnikvm_stateful::MemoryStateful;
-use std::str::FromStr;
 use std::collections::HashMap;
 use std::rc::Rc;
 use sha3::{Keccak256, Digest};
-
-use jsonrpc_macros::Trailing;
 
 pub fn from_block_number<T: Into<Option<String>>>(state: &MinerState, value: T) -> Result<usize, Error> {
     let value: Option<String> = value.into();
@@ -133,7 +129,7 @@ pub fn to_rpc_transaction(transaction: Transaction, block: Option<&Block>) -> RP
         from: Some(Hex(transaction.caller().unwrap())),
         to: match transaction.action {
             TransactionAction::Call(address) => Some(Hex(address)),
-            TransactionAction::Create => None,
+            _ => None, /* Create & Create2(???) */
         },
         gas: Some(Hex(transaction.gas_limit)),
         gas_price: Some(Hex(transaction.gas_price)),
@@ -177,7 +173,7 @@ pub fn to_rpc_block(block: Block, total_header: TotalHeader, full_transactions: 
     RPCBlock {
         number: Hex(block.header.number),
         hash: Hex(block.header.header_hash()),
-        parent_hash: Hex(block.header.parent_hash),
+        parent_hash: Hex(block.header.header_hash()),
         nonce: Hex(block.header.nonce),
         sha3_uncles: Hex(block.header.ommers_hash),
         logs_bloom: Hex(logs_bloom),

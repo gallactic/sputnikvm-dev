@@ -1,24 +1,16 @@
-use rlp;
-use block::{Receipt, Block, UnsignedTransaction, Transaction, TransactionAction, Log, FromKey, Header, Account, ommers_hash, transactions_root, receipts_root, RlpHash};
-use trie::{MemoryDatabase, Database, MemoryDatabaseGuard, Trie};
-use bigint::{H256, M256, U256, H64, B256, Gas, Address};
+use block::{Receipt, Block, Transaction, TransactionAction, Log, FromKey, Header, HeaderHash, ommers_hash, transactions_root, receipts_root, RlpHash};
+use trie::{MemoryDatabase, Database};
+use bigint::{H256, U256, H64, B256, Gas, Address};
 use bloom::LogsBloom;
-use secp256k1::SECP256K1;
-use secp256k1::key::{PublicKey, SecretKey};
+use secp256k1::key::{SecretKey};
 use std::time::Duration;
-use std::thread;
 use std::str::FromStr;
-use std::collections::HashMap;
 use std::time::{SystemTime, UNIX_EPOCH};
 use std::sync::{Arc, Mutex};
-use std::sync::mpsc::{channel, Sender, Receiver};
+use std::sync::mpsc::{Receiver};
 use std::rc::Rc;
-use sputnikvm::{AccountChange, ValidTransaction, Patch, AccountCommitment, AccountState, HeaderParams, SeqTransactionVM, VM, VMStatus};
-use sputnikvm::errors::RequireError;
+use sputnikvm::{ValidTransaction, Patch, HeaderParams, SeqTransactionVM, VM, VMStatus};
 use sputnikvm_stateful::MemoryStateful;
-use rand::os::OsRng;
-use sha3::{Digest, Keccak256};
-use blockchain::chain::HeaderHash;
 use hexutil::*;
 
 mod state;
@@ -108,7 +100,7 @@ pub fn make_state<P: Patch>(genesis_accounts: Vec<(SecretKey, U256)>) -> MinerSt
     for &(ref secret_key, balance) in &genesis_accounts {
         let address = Address::from_secret_key(secret_key).unwrap();
 
-        let vm: SeqTransactionVM<P> = {
+        let _vm: SeqTransactionVM<P> = {
             let vm = stateful.call(ValidTransaction {
                 caller: None,
                 gas_price: Gas::zero(),
@@ -132,7 +124,7 @@ pub fn make_state<P: Patch>(genesis_accounts: Vec<(SecretKey, U256)>) -> MinerSt
 
     let mut state = MinerState::new(genesis, stateful);
 
-    for (secret_key, balance) in genesis_accounts {
+    for (secret_key, _balance) in genesis_accounts {
         let address = Address::from_secret_key(&secret_key).unwrap();
         println!("address: {:?}", address);
         println!("private key: {}", to_hex(&secret_key[..]));

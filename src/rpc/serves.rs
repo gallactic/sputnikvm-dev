@@ -1,23 +1,20 @@
-use super::{EthereumRPC, FilterRPC, DebugRPC, Either, RPCTransaction, RPCTrace, RPCStep, RPCBlock, RPCLog, RPCReceipt, RPCLogFilter, RPCBlockTrace, RPCDump, RPCDumpAccount, RPCTraceConfig};
+use super::{EthereumRPC, FilterRPC, DebugRPC, Either, RPCTransaction, RPCTrace, RPCBlock, RPCLog, RPCReceipt, RPCLogFilter, RPCBlockTrace, RPCDump, RPCDumpAccount, RPCTraceConfig};
 use super::util::*;
 use super::filter::*;
 use super::serialize::*;
-use super::solidity::*;
 
 use error::Error;
 use miner::MinerState;
 
 use rlp::{self, UntrustedRlp};
-use bigint::{M256, U256, H256, H2048, Address, Gas};
-use hexutil::{read_hex, to_hex};
-use block::{Block, TotalHeader, Account, Log, Receipt, FromKey, Transaction, UnsignedTransaction, TransactionAction};
+use bigint::{M256, U256, H256, Address, Gas};
+use block::{HeaderHash, Block, Account, FromKey, Transaction};
 use trie::{Database, DatabaseGuard, FixedSecureTrie};
-use blockchain::chain::HeaderHash;
-use sputnikvm::{AccountChange, ValidTransaction, SeqTransactionVM, VM, VMStatus, Memory, MachineStatus, HeaderParams, Patch};
+use sputnikvm::{SeqTransactionVM, VM, HeaderParams, Patch};
 use sputnikvm_stateful::MemoryStateful;
 use std::str::FromStr;
 use std::sync::{Arc, Mutex};
-use std::sync::mpsc::{channel, Sender, Receiver};
+use std::sync::mpsc::{Sender};
 use std::collections::HashMap;
 use std::marker::PhantomData;
 
@@ -303,7 +300,7 @@ impl<P: 'static + Patch + Send> EthereumRPC for MinerEthereumRPC<P> {
         let mut state = self.state.lock().unwrap();
 
 
-        let (valid, transaction) = {
+        let (_valid, transaction) = {
             let stateful = state.stateful();
             let transaction = to_signed_transaction(&state, transaction, &stateful)?;
             let valid = stateful.to_valid::<P>(&transaction.clone())?;

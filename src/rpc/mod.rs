@@ -1,14 +1,11 @@
-use jsonrpc_core::{self, IoHandler, Params};
+use jsonrpc_core::{IoHandler};
 use jsonrpc_http_server::*;
 use jsonrpc_macros::Trailing;
 
-use serde::Serialize;
-use serde::de::DeserializeOwned;
-use serde_json::{self, Value};
 use bigint::{U256, H256, M256, H2048, H64, Address, Gas};
 use std::net::SocketAddr;
 use std::sync::{Arc, Mutex};
-use std::sync::mpsc::{channel, Sender, Receiver};
+use std::sync::mpsc::{Sender};
 use std::collections::HashMap;
 use sputnikvm::Patch;
 

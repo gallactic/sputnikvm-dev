@@ -1,11 +1,8 @@
-use bigint::{Address, H256, U256};
-use hexutil::*;
-use block::{Log, Receipt};
+use bigint::{Address, H256};
+use block::{HeaderHash, Log};
 use sha3::{Digest, Keccak256};
-use std::str::FromStr;
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
-use blockchain::chain::HeaderHash;
 use rpc::RPCLogFilter;
 
 use super::{RPCLog, Either};
