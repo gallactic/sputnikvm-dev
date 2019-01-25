@@ -60,10 +60,10 @@ use sputnikvm_network_classic::{
     MainnetEIP150Patch as PClassicEIP150,
     MainnetFrontierPatch as PClassicFrontier,
     MainnetHomesteadPatch as PClassicHomestead,
-    MordenEIP160Patch as PMordenEIP160,
-    MordenEIP150Patch as PMordenEIP150,
-    MordenFrontierPatch as PMordenFrontier,
-    MordenHomesteadPatch as PMordenHomestead,
+    ModernEIP160Patch as PModernEIP160,
+    ModernEIP150Patch as PModernEIP150,
+    ModernFrontierPatch as PModernFrontier,
+    ModernHomesteadPatch as PModernHomestead,
 };
 use sputnikvm_network_foundation::{
     FrontierPatch as PFoundationFrontier,
@@ -119,11 +119,11 @@ fn main() {
         Some("classic-homestead") => with_patch::<PClassicHomestead>(matches),
         Some("classic-frontier") => with_patch::<PClassicFrontier>(matches),
 
-        Some("morden") => with_patch::<PMordenEIP160>(matches),
-        Some("morden-eip160") => with_patch::<PMordenEIP160>(matches),
-        Some("morden-eip150") => with_patch::<PMordenEIP150>(matches),
-        Some("morden-homestead") => with_patch::<PMordenHomestead>(matches),
-        Some("morden-frontier") => with_patch::<PMordenFrontier>(matches),
+        Some("modern") => with_patch::<PModernEIP160>(matches),
+        Some("modern-eip160") => with_patch::<PModernEIP160>(matches),
+        Some("modern-eip150") => with_patch::<PModernEIP150>(matches),
+        Some("modern-homestead") => with_patch::<PModernHomestead>(matches),
+        Some("modern-frontier") => with_patch::<PModernFrontier>(matches),
 
         Some("foundation") => with_patch::<PFoundationByzantium>(matches),
         Some("foundation-byzantium") => with_patch::<PFoundationByzantium>(matches),
